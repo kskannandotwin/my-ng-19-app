@@ -1,0 +1,11 @@
+<div class="upload-zone" (dragover)="onDragOver($event)" (dragleave)="isDragging = false" (drop)="onDrop($event)"
+    [class.dragging]="isDragging">
+    <input type="file" #fileInput (change)="onFileInputChange($event)" multiple class="file-input" />
+    <div class="upload-content">
+        <span class="upload-icon">📁</span>
+        <p>Drag and drop files here or</p>
+        <button class="browse-button" (click)="fileInput.click()">
+            Browse Files
+        </button>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="upload-container">
+    <app-upload-zone (fileSelected)="onFileSelected($event)"></app-upload-zone>
+    <app-file-list [uploads]="uploads" (deleteFile)="onDeleteFile($event)"
+        (editFileName)="onEditFileName($event)"></app-file-list>
+</div>

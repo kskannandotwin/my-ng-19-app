@@ -1,0 +1,29 @@
+<div class="file-list">
+    <div *ngFor="let upload of uploads" class="file-item">
+        <div class="file-info">
+            <ng-container *ngIf="!isEditing[upload.id]; else editMode">
+                <span class="file-name">{{ upload.name }}</span>
+                <span class="file-size">{{ formatFileSize(upload.file.size) }}</span>
+            </ng-container>
+            <ng-template #editMode>
+                <input type="text" [(ngModel)]="editedName[upload.id]" (keyup.enter)="saveFileName(upload)"
+                    (blur)="saveFileName(upload)" class="edit-input" #editInput />
+            </ng-template>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" [style.width.%]="upload.progress" [class]="upload.status"></div>
+        </div>
+        <div class="actions">
+            <button *ngIf="upload.status === 'done'" class="action-button edit" (click)="startEditing(upload)"
+                title="Edit filename">
+                ✎
+            </button>
+            <button class="action-button delete" (click)="deleteFile.emit(upload.id)" title="Delete file">
+                🗑
+            </button>
+            <span class="status-icon" [class]="upload.status">
+                {{ getStatusIcon(upload.status) }}
+            </span>
+        </div>
+    </div>
+</div>
