@@ -1,22 +1,4 @@
-.user-list {
-  padding: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.error-message {
-  color: #dc3545;
-  padding: 15px;
-  border: 1px solid #dc3545;
-  border-radius: 4px;
-  margin: 10px 0;
-  background-color: #fff;
-}
-
-li {
+.user-card {
   border: 1px solid #ddd;
   margin: 10px 0;
   padding: 15px;
@@ -24,7 +6,7 @@ li {
   transition: transform 0.2s ease;
 }
 
-li:hover {
+.user-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
